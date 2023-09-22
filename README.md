@@ -21,12 +21,12 @@ docker info
 docker images
 ```
 
-## Bring an image
+### Bring an image
 ```bash
 docker pull [IMAGE NAME]:version
 ```
 
-## Delete an image
+### Delete an image
 ```bash
 docker image rm [IMAGE NAME]:version
 ```
