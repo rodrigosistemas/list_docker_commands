@@ -85,3 +85,67 @@ docker run -d [IMAGE NAME]:version
 ```bash
 docker logs [CONTAINER ID]
 ```
+
+<br>
+
+## Docker Compose commands
+
+### Initialize and build containers (in background)
+```bash
+docker compose up -d --build
+```
+✅ Starts and builds the containers in detached mode.
+
+### Stop all containers
+```bash
+docker compose stop
+```
+✅ Stops the containers created with Docker Compose but does not remove them.
+
+### Start stopped containers
+```bash
+docker compose start
+```
+✅ Starts containers that were previously stopped.
+
+### Stop and remove containers, networks, volumes
+```bash
+docker compose down
+```
+✅ Stops and removes containers, networks, and other resources created by Docker Compose.
+
+### Show status of containers
+```bash
+docker compose ps
+```
+✅ Displays the status of the containers managed by Docker Compose.
+
+### View logs in real-time
+```bash
+docker compose logs -f
+```
+✅ Shows the logs of all containers in real-time.
+
+### Execute a command inside a container
+```bash
+docker compose exec [SERVICE NAME] [COMMAND]
+```
+✅ Runs a command inside an active container managed by Docker Compose.
+
+### List container IDs
+```bash
+docker compose ps -q
+```
+✅ Returns only the IDs of the containers (useful for scripts).
+
+### Build or rebuild images
+```bash
+docker compose build
+```
+✅ Builds the images defined in the `docker-compose.yml` without starting the containers.
+
+### View docker-compose configuration
+```bash
+docker compose config
+```
+✅ Displays the final configuration after resolving variables and includes.
