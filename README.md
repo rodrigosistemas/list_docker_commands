@@ -4,36 +4,35 @@
 
 ## Information commands
 
-### Docker version info
-```bash
-docker version
-```
-
-### Show info like number of containers
-```bash
-docker info
-```
-
-## Image commands
-
 ### See the images
 ```bash
 docker images
-```
+````
 
 ### Bring an image
+
 ```bash
 docker pull [IMAGE NAME]:version
 ```
 
 ### Delete an image
+
 ```bash
 docker image rm [IMAGE NAME]:version
 ```
 
+### Build an image from a Dockerfile
+
+```bash
+docker build -t [IMAGE NAME]:version .
+```
+
+---
+
 ## Container commands
 
 ### Create containers
+
 To create a container it is necessary to have an image
 
 ```bash
@@ -44,44 +43,68 @@ docker create [IMAGE NAME]:version
 docker container create [IMAGE NAME]:version
 ```
 
-### Start containers
+### Run a container (create + start)
+
+Creates and runs a container from an image in one step:
+
 ```bash
-docker start [CONTAINER ID]
+docker run --name [CONTAINER NAME] [IMAGE NAME]:version
+```
+
+### Run a container in background (detached)
+
+```bash
+docker run -d --name [CONTAINER NAME] [IMAGE NAME]:version
+```
+
+### Start containers
+
+```bash
+docker start [CONTAINER ID or NAME]
 ```
 
 ### See containers in execution
+
 ```bash
 docker ps
 ```
 
 ### See all containers
+
 ```bash
 docker ps -a
 ```
 
 ### Stop containers in execution
+
 ```bash
-docker stop [CONTAINER ID]
+docker stop [CONTAINER ID or NAME]
 ```
 
 ### Add a container name
+
 ```bash
-docker create --name [CONTAINER NAME] [IMAGE NAME]
+docker create --name [CONTAINER NAME] [IMAGE NAME]:version
 ```
+
+---
 
 ## Useful commands
 
 ### Convert image to container and run
+
 ```bash
 docker run [IMAGE NAME]:version
 ```
 
 ### Convert image to container and run in background
+
 ```bash
 docker run -d [IMAGE NAME]:version
 ```
 
 ### Display the output of a container
+
 ```bash
 docker logs [CONTAINER ID]
 ```
